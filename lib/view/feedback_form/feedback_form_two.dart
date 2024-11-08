@@ -1,14 +1,24 @@
+// After Clicking the Boxes Button
+
 import 'package:counter_plus_feedback/utils/colorconstants/colorconstants.dart';
 import 'package:counter_plus_feedback/view/common_widgets/back_button_icon.dart';
 import 'package:counter_plus_feedback/view/common_widgets/bottom_container.dart';
 import 'package:counter_plus_feedback/view/common_widgets/common_text_container.dart';
 import 'package:counter_plus_feedback/view/common_widgets/feedback_heading.dart';
-import 'package:counter_plus_feedback/view/feedback_form/feedback_form_two.dart';
+import 'package:counter_plus_feedback/view/feedback_form/feedback_form.dart';
 import 'package:flutter/material.dart';
 
-class FeedbackForm extends StatelessWidget {
-  const FeedbackForm({super.key});
+// After Clicking the Boxes Button
 
+class FeedbackFormTwo extends StatefulWidget {
+  const FeedbackFormTwo({super.key});
+
+  @override
+  State<FeedbackFormTwo> createState() => _FeedbackFormTwoState();
+}
+
+class _FeedbackFormTwoState extends State<FeedbackFormTwo> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.sizeOf(context).height;
@@ -83,7 +93,7 @@ class FeedbackForm extends StatelessWidget {
                               horizontal: 13, vertical: 15),
                           decoration: BoxDecoration(
                             color: Colorconstants.containerColor,
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(20),
                           ),
 
                           // textfield
@@ -135,9 +145,17 @@ class FeedbackForm extends StatelessWidget {
                                 child: ElevatedButton(
                                   onPressed: () {
                                     // logic here
+                                    // navigate to feedback two || boxes fuction
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              const FeedbackForm(),
+                                        ));
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colorconstants.whiteColor,
+                                    backgroundColor:
+                                        Colorconstants.backgroundColor,
                                     shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(16),
@@ -147,7 +165,7 @@ class FeedbackForm extends StatelessWidget {
                                   child: const Text(
                                     'Bar',
                                     style: TextStyle(
-                                      color: Colorconstants.backgroundColor,
+                                      color: Colorconstants.whiteColor,
                                       fontSize: 20,
                                       fontWeight: FontWeight.normal,
                                     ),
@@ -159,18 +177,9 @@ class FeedbackForm extends StatelessWidget {
                               ElevatedButton(
                                 onPressed: () {
                                   // logic here
-
-                                  // navigate to feedback two || boxes fuction
-                                  Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            const FeedbackFormTwo(),
-                                      ));
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor:
-                                      Colorconstants.backgroundColor,
+                                  backgroundColor: Colorconstants.whiteColor,
                                   shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.only(
                                         topRight: Radius.circular(16),
@@ -180,7 +189,7 @@ class FeedbackForm extends StatelessWidget {
                                 child: const Text(
                                   'Boxes',
                                   style: TextStyle(
-                                    color: Colorconstants.whiteColor,
+                                    color: Colorconstants.backgroundColor,
                                     fontSize: 20,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -193,110 +202,57 @@ class FeedbackForm extends StatelessWidget {
                         // ---------------- Bar and Boxes Buttons -----------------------
 
                         const SizedBox(
-                          height: 17,
+                          height: 16,
                         ),
 
-                        // ---------------- 1 to 10 with square icon and line -----------------------
+                        // ---------------- check box and Text button ----------------------------
 
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 36.0),
-                          child: Row(
-                            children: [
-                              // #01
-                              Container(
-                                height: 30,
-                                width: 30,
-                                decoration: BoxDecoration(
-                                  color: Colorconstants.whiteColor,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: const Center(
-                                  child: Text(
-                                    '1',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colorconstants.backgroundColor,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
+                        createTextContainerWithCheckBox(),
 
-                              const SizedBox(
-                                width: 8,
-                              ),
+                        const SizedBox(
+                          height: 16,
+                        ),
 
-                              // Divider
-                              Expanded(
-                                child: Container(
-                                  height: 1,
-                                  color: Colorconstants.whiteColor,
-                                ),
-                              ),
-                              // square box
-                              Container(
-                                height: 17,
-                                width: 17,
-                                decoration: const BoxDecoration(
-                                  color: Colorconstants.whiteColor,
-                                ),
-                              ),
-                              // Divider
-                              Expanded(
-                                child: Container(
-                                  height: 1,
-                                  color: Colorconstants.whiteColor,
-                                ),
-                              ),
+                        createTextContainerWithCheckBox(),
 
-                              const SizedBox(
-                                width: 8,
-                              ),
+                        // ---------------- check box and Text button ----------------------------
 
-                              // #02
-                              Container(
-                                height: 30,
-                                width: 30,
-                                decoration: BoxDecoration(
-                                  color: Colorconstants.whiteColor,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: const Center(
-                                  child: Text(
-                                    '2',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colorconstants.backgroundColor,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+                        const SizedBox(
+                          height: 24,
+                        ),
+
+                        // Add Button
+
+                        Container(
+                          height: 58,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(13),
+                            border: Border.all(
+                              color: Colorconstants.whiteColor,
+                              width: 1,
+                            ),
+                          ),
+                          child: const Icon(
+                            Icons.add,
+                            color: Colorconstants.whiteColor,
+                            size: 40,
                           ),
                         ),
 
-                        // ---------------- 1 to 10 with square icon and line -----------------------
-
                         const SizedBox(
-                          height: 17,
+                          height: 10,
                         ),
 
-                        // ---------------- 1) textcontainer -----------------------
+                        // Add Button
 
-                        const TextContainer(hintText: '1)'),
-
-                        // ---------------- 1) textcontainer -----------------------
-
-                        const SizedBox(
-                          height: 17,
-                        ),
-
-                        // ---------------- 10) textcontainer -----------------------
-
-                        const TextContainer(hintText: '10)'),
-
-                        // ---------------- 10) textcontainer -----------------------
+                        Text(
+                          'Add box',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colorconstants.whiteColor.withOpacity(0.5),
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -304,7 +260,7 @@ class FeedbackForm extends StatelessWidget {
                   // ----------------- Bottom Container with 3 Buttons -----------------
 
                   Positioned(
-                    bottom: heightUnit * 6,
+                    bottom: heightUnit,
                     left: 0,
                     right: 0,
                     child: const BottomContainer(),
@@ -317,8 +273,69 @@ class FeedbackForm extends StatelessWidget {
           ),
 
           // ------------------ Form Container ---------------------------------
+
+          const SizedBox(
+            height: 30,
+          ),
         ],
       ),
+    );
+  }
+
+  // Check box and Text Container
+
+  Row createTextContainerWithCheckBox() {
+    return Row(
+      children: [
+        InkWell(
+          onTap: () {
+            setState(() {
+              isChecked = !isChecked;
+            });
+          },
+          child: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(
+                color: Colorconstants.whiteColor,
+                width: 1,
+              ),
+            ),
+            child: isChecked
+                ? const Icon(
+                    Icons.check,
+                    color: Colorconstants.whiteColor,
+                  )
+                : null,
+          ),
+        ),
+        const SizedBox(
+          width: 16,
+        ),
+        Expanded(
+          child: Container(
+            height: 56,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+            decoration: BoxDecoration(
+              color: Colorconstants.containerColor,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: TextFormField(
+              decoration: InputDecoration(
+                hintText: 'Text...',
+                hintStyle: TextStyle(
+                  color: Colorconstants.whiteColor.withOpacity(0.5),
+                  fontSize: 23,
+                  fontWeight: FontWeight.w400,
+                ),
+                border: InputBorder.none,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
