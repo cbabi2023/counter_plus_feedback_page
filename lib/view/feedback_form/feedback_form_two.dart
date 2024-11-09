@@ -5,7 +5,8 @@ import 'package:counter_plus_feedback/view/common_widgets/back_button_icon.dart'
 import 'package:counter_plus_feedback/view/common_widgets/bottom_container.dart';
 import 'package:counter_plus_feedback/view/common_widgets/common_text_container.dart';
 import 'package:counter_plus_feedback/view/common_widgets/feedback_heading.dart';
-import 'package:counter_plus_feedback/view/feedback_form/feedback_form.dart';
+import 'package:counter_plus_feedback/view/feedback_form/feedback_form_one.dart';
+import 'package:counter_plus_feedback/view/feedback_question_form/feedback_question_one.dart';
 import 'package:flutter/material.dart';
 
 // After Clicking the Boxes Button
@@ -75,7 +76,7 @@ class _FeedbackFormTwoState extends State<FeedbackFormTwo> {
                     child: Column(
                       children: [
                         // ---------------- first Text.... field ---------------------
-                        const TextContainer(
+                        const MultiLineTextContainer(
                           hintText: 'Text...',
                         ),
 
@@ -87,37 +88,8 @@ class _FeedbackFormTwoState extends State<FeedbackFormTwo> {
 
                         // ---------------- create your own ----------------------------
 
-                        Container(
-                          height: 56,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 13, vertical: 15),
-                          decoration: BoxDecoration(
-                            color: Colorconstants.containerColor,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-
-                          // textfield
-
-                          child: TextFormField(
-                            maxLines: 1,
-
-                            decoration: InputDecoration(
-                              hintText: 'Create own',
-                              hintStyle: TextStyle(
-                                color:
-                                    Colorconstants.whiteColor.withOpacity(0.5),
-                                fontSize: 23,
-                                fontWeight: FontWeight.w400,
-                              ),
-                              border: InputBorder.none,
-                            ),
-
-                            // styling the text input by user
-                            style: const TextStyle(
-                              color: Colorconstants.whiteColor,
-                              fontSize: 15,
-                            ),
-                          ),
+                        const SingleLineTextContainer(
+                          hintText: 'Create own',
                         ),
 
                         // ---------------- create your own --------------------------
@@ -177,6 +149,12 @@ class _FeedbackFormTwoState extends State<FeedbackFormTwo> {
                               ElevatedButton(
                                 onPressed: () {
                                   // logic here
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const FeedbackQuestionFormOne(),
+                                      ));
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colorconstants.whiteColor,

@@ -65,7 +65,7 @@ class FeedbackForm extends StatelessWidget {
                     child: Column(
                       children: [
                         // ---------------- first Text.... field ---------------------
-                        const TextContainer(
+                        const MultiLineTextContainer(
                           hintText: 'Text...',
                         ),
 
@@ -77,38 +77,7 @@ class FeedbackForm extends StatelessWidget {
 
                         // ---------------- create your own ----------------------------
 
-                        Container(
-                          height: 56,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 13, vertical: 15),
-                          decoration: BoxDecoration(
-                            color: Colorconstants.containerColor,
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-
-                          // textfield
-
-                          child: TextFormField(
-                            maxLines: 1,
-
-                            decoration: InputDecoration(
-                              hintText: 'Create own',
-                              hintStyle: TextStyle(
-                                color:
-                                    Colorconstants.whiteColor.withOpacity(0.5),
-                                fontSize: 23,
-                                fontWeight: FontWeight.w400,
-                              ),
-                              border: InputBorder.none,
-                            ),
-
-                            // styling the text input by user
-                            style: const TextStyle(
-                              color: Colorconstants.whiteColor,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ),
+                        const SingleLineTextContainer(hintText: 'Create own'),
 
                         // ---------------- create your own --------------------------
 
@@ -284,7 +253,7 @@ class FeedbackForm extends StatelessWidget {
 
                         // ---------------- 1) textcontainer -----------------------
 
-                        const TextContainer(hintText: '1)'),
+                        const MultiLineTextContainer(hintText: '1)'),
 
                         // ---------------- 1) textcontainer -----------------------
 
@@ -294,7 +263,7 @@ class FeedbackForm extends StatelessWidget {
 
                         // ---------------- 10) textcontainer -----------------------
 
-                        const TextContainer(hintText: '10)'),
+                        const MultiLineTextContainer(hintText: '10)'),
 
                         // ---------------- 10) textcontainer -----------------------
                       ],
