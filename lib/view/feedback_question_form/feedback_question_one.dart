@@ -4,6 +4,7 @@ import 'package:counter_plus_feedback/view/common_widgets/bottom_container.dart'
 import 'package:counter_plus_feedback/view/common_widgets/common_text_container.dart';
 import 'package:counter_plus_feedback/view/common_widgets/feedback_heading.dart';
 import 'package:counter_plus_feedback/view/feedback_form/feedback_form_one.dart';
+import 'package:counter_plus_feedback/view/feedback_question_form/feedback_question_two.dart';
 
 import 'package:flutter/material.dart';
 
@@ -125,7 +126,14 @@ class FeedbackQuestionFormOne extends StatelessWidget {
                                 width: 5,
                               ),
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const FeedbackQuestionFormTwo(),
+                                      ));
+                                },
                                 child: Container(
                                   height: 56,
                                   width: 88,

@@ -8,4 +8,15 @@ class Colorconstants {
   static const containerColor = Color(0xff515373);
   static const bottomContainerColor = Color(0xff34396E);
   static const circleButtonBackgroundColor = Color(0xff7E84A3);
+
+  // Gradient colors
+
+  static const LinearGradient questionContainer = LinearGradient(
+    colors: [
+      Color(0xff3BAFA6),
+      Color(0xff16DBAD),
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
 }
