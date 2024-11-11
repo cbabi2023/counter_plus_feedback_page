@@ -58,194 +58,196 @@ class _FeedbackFormTwoState extends State<FeedbackFormTwo> {
           // ------------------ Form Container ---------------------------------
 
           Expanded(
-            child: SizedBox(
-              child: Stack(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(
-                        left: 40.0, right: 40.0, bottom: 76.0),
-                    padding: const EdgeInsets.all(16.0),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colorconstants.darkBlueColor,
-                      borderRadius: BorderRadius.circular(22),
-                    ),
+            child: SingleChildScrollView(
+              child: SizedBox(
+                child: Stack(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(
+                          left: 40.0, right: 40.0, bottom: 76.0),
+                      padding: const EdgeInsets.all(16.0),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colorconstants.darkBlueColor,
+                        borderRadius: BorderRadius.circular(22),
+                      ),
 
-                    // child
+                      // child
 
-                    child: Column(
-                      children: [
-                        // ---------------- first Text.... field ---------------------
-                        const MultiLineTextContainer(
-                          hintText: 'Text...',
-                        ),
+                      child: Column(
+                        children: [
+                          // ---------------- first Text.... field ---------------------
+                          const MultiLineTextContainer(
+                            hintText: 'Text...',
+                          ),
 
-                        // ---------------- first Text.... field ---------------------
+                          // ---------------- first Text.... field ---------------------
 
-                        const SizedBox(
-                          height: 16,
-                        ),
+                          const SizedBox(
+                            height: 16,
+                          ),
 
-                        // ---------------- create your own ----------------------------
+                          // ---------------- create your own ----------------------------
 
-                        const SingleLineTextContainer(
-                          hintText: 'Create own',
-                        ),
+                          const SingleLineTextContainer(
+                            hintText: 'Create own',
+                          ),
 
-                        // ---------------- create your own --------------------------
+                          // ---------------- create your own --------------------------
 
-                        const SizedBox(
-                          height: 17,
-                        ),
+                          const SizedBox(
+                            height: 17,
+                          ),
 
-                        // ---------------- Bar and Boxes Buttons -----------------------
+                          // ---------------- Bar and Boxes Buttons -----------------------
 
-                        Container(
-                          width: 183,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              color: Colorconstants.whiteColor,
-                              borderRadius: BorderRadius.circular(16),
-                              border: Border.all(
+                          Container(
+                            width: 183,
+                            height: 40,
+                            decoration: BoxDecoration(
                                 color: Colorconstants.whiteColor,
-                                width: 0.5,
-                              )),
-                          child: Row(
-                            children: [
-                              // First button (left half)
-                              Expanded(
-                                child: ElevatedButton(
+                                borderRadius: BorderRadius.circular(16),
+                                border: Border.all(
+                                  color: Colorconstants.whiteColor,
+                                  width: 0.5,
+                                )),
+                            child: Row(
+                              children: [
+                                // First button (left half)
+                                Expanded(
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      // logic here
+                                      // navigate to feedback two || boxes fuction
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const FeedbackForm(),
+                                          ));
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor:
+                                          Colorconstants.backgroundColor,
+                                      shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(16),
+                                            bottomLeft: Radius.circular(16)),
+                                      ),
+                                    ),
+                                    child: const Text(
+                                      'Bar',
+                                      style: TextStyle(
+                                        color: Colorconstants.whiteColor,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+
+                                // Second button (right half)
+                                ElevatedButton(
                                   onPressed: () {
                                     // logic here
-                                    // navigate to feedback two || boxes fuction
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              const FeedbackForm(),
+                                              const FeedbackQuestionFormOne(),
                                         ));
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor:
-                                        Colorconstants.backgroundColor,
+                                    backgroundColor: Colorconstants.whiteColor,
                                     shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(16),
-                                          bottomLeft: Radius.circular(16)),
+                                          topRight: Radius.circular(16),
+                                          bottomRight: Radius.circular(16)),
                                     ),
                                   ),
                                   child: const Text(
-                                    'Bar',
+                                    'Boxes',
                                     style: TextStyle(
-                                      color: Colorconstants.whiteColor,
+                                      color: Colorconstants.backgroundColor,
                                       fontSize: 20,
                                       fontWeight: FontWeight.normal,
                                     ),
                                   ),
                                 ),
-                              ),
-
-                              // Second button (right half)
-                              ElevatedButton(
-                                onPressed: () {
-                                  // logic here
-                                  Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            const FeedbackQuestionFormOne(),
-                                      ));
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colorconstants.whiteColor,
-                                  shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                        topRight: Radius.circular(16),
-                                        bottomRight: Radius.circular(16)),
-                                  ),
-                                ),
-                                child: const Text(
-                                  'Boxes',
-                                  style: TextStyle(
-                                    color: Colorconstants.backgroundColor,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        // ---------------- Bar and Boxes Buttons -----------------------
-
-                        const SizedBox(
-                          height: 16,
-                        ),
-
-                        // ---------------- check box and Text button ----------------------------
-
-                        createTextContainerWithCheckBox(),
-
-                        const SizedBox(
-                          height: 16,
-                        ),
-
-                        createTextContainerWithCheckBox(),
-
-                        // ---------------- check box and Text button ----------------------------
-
-                        const SizedBox(
-                          height: 24,
-                        ),
-
-                        // Add Button
-
-                        Container(
-                          height: 58,
-                          width: 80,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            border: Border.all(
-                              color: Colorconstants.whiteColor,
-                              width: 1,
+                              ],
                             ),
                           ),
-                          child: const Icon(
-                            Icons.add,
-                            color: Colorconstants.whiteColor,
-                            size: 40,
+
+                          // ---------------- Bar and Boxes Buttons -----------------------
+
+                          const SizedBox(
+                            height: 16,
                           ),
-                        ),
 
-                        const SizedBox(
-                          height: 10,
-                        ),
+                          // ---------------- check box and Text button ----------------------------
 
-                        // Add Button
+                          createTextContainerWithCheckBox(),
 
-                        Text(
-                          'Add box',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colorconstants.whiteColor.withOpacity(0.5),
+                          const SizedBox(
+                            height: 16,
                           ),
-                        )
-                      ],
+
+                          createTextContainerWithCheckBox(),
+
+                          // ---------------- check box and Text button ----------------------------
+
+                          const SizedBox(
+                            height: 24,
+                          ),
+
+                          // Add Button
+
+                          Container(
+                            height: 58,
+                            width: 80,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(13),
+                              border: Border.all(
+                                color: Colorconstants.whiteColor,
+                                width: 1,
+                              ),
+                            ),
+                            child: const Icon(
+                              Icons.add,
+                              color: Colorconstants.whiteColor,
+                              size: 40,
+                            ),
+                          ),
+
+                          const SizedBox(
+                            height: 10,
+                          ),
+
+                          // Add Button
+
+                          Text(
+                            'Add box',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colorconstants.whiteColor.withOpacity(0.5),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
 
-                  // ----------------- Bottom Container with 3 Buttons -----------------
+                    // ----------------- Bottom Container with 3 Buttons -----------------
 
-                  Positioned(
-                    bottom: heightUnit,
-                    left: 0,
-                    right: 0,
-                    child: const BottomContainer(),
-                  ),
+                    Positioned(
+                      bottom: heightUnit,
+                      left: 0,
+                      right: 0,
+                      child: const BottomContainer(),
+                    ),
 
-                  // ----------------- Bottom Container with 3 Buttons -----------------
-                ],
+                    // ----------------- Bottom Container with 3 Buttons -----------------
+                  ],
+                ),
               ),
             ),
           ),

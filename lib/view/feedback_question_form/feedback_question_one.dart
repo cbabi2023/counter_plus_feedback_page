@@ -54,107 +54,109 @@ class FeedbackQuestionFormOne extends StatelessWidget {
 
           // ------------------ Form Container ---------------------------------
 
-          SizedBox(
-            child: Stack(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(
-                      left: 40.0, right: 40.0, bottom: 76.0),
-                  padding: const EdgeInsets.all(16.0),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colorconstants.darkBlueColor,
-                    borderRadius: BorderRadius.circular(22),
-                  ),
-
-                  // child
-
-                  child: Column(
-                    children: [
-                      // ---------------- first Text.... field ---------------------
-                      const MultiLineTextContainer(
-                        hintText: 'Question',
+          Expanded(
+            child: SingleChildScrollView(
+              child: SizedBox(
+                child: Stack(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(
+                          left: 40.0, right: 40.0, bottom: 76.0),
+                      padding: const EdgeInsets.all(16.0),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colorconstants.darkBlueColor,
+                        borderRadius: BorderRadius.circular(22),
                       ),
 
-                      // ---------------- first Text.... field ---------------------
+                      // child
 
-                      const SizedBox(
-                        height: 16,
-                      ),
-
-                      // ---------------- create your own ----------------------------
-
-                      const SingleLineTextContainer(
-                        hintText: '1 - 10',
-                      ),
-
-                      // ---------------- create your own --------------------------
-                      const SizedBox(
-                        height: 32,
-                      ),
-
-                      // Save and Delete Buttons
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      child: Column(
                         children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              height: 56,
-                              width: 136,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(11),
-                                border: Border.all(
-                                    color: Colorconstants.whiteColor),
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  "Save",
-                                  style: TextStyle(
-                                    fontSize: 30,
-                                    color: Colorconstants.whiteColor,
-                                  ),
-                                ),
-                              ),
-                            ),
+                          // ---------------- first Text.... field ---------------------
+                          const MultiLineTextContainer(
+                            hintText: 'Question',
                           ),
+
+                          // ---------------- first Text.... field ---------------------
+
                           const SizedBox(
-                            width: 16,
+                            height: 16,
                           ),
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              height: 56,
-                              width: 88,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(11),
-                                border: Border.all(
-                                    color: Colorconstants.whiteColor),
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  "Delete",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colorconstants.whiteColor,
+
+                          // ---------------- create your own ----------------------------
+
+                          const SingleLineTextContainer(
+                            hintText: '1 - 10',
+                          ),
+
+                          // ---------------- create your own --------------------------
+                          const SizedBox(
+                            height: 32,
+                          ),
+
+                          // Save and Delete Buttons
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  height: 56,
+                                  width: 136,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(11),
+                                    border: Border.all(
+                                        color: Colorconstants.whiteColor),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      "Save",
+                                      style: TextStyle(
+                                        fontSize: 30,
+                                        color: Colorconstants.whiteColor,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  height: 56,
+                                  width: 88,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(11),
+                                    border: Border.all(
+                                        color: Colorconstants.whiteColor),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      "Delete",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colorconstants.whiteColor,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
 
           // ------------------ Form Container ---------------------------------
-
-          const Spacer(),
 
           const BottomContainer(),
 
